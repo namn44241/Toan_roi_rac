@@ -3,35 +3,32 @@
 # k số nguyên tố khác nhau.
 # Hãy đếm số các số tự nhiên nhỏ hơn hoặc bằng n và không chia hết cho bất cứ số nguyên tố nào trong k số.
 
-import math
-from itertools import combinations
-
-MOD = 10 ** 9 + 7
+def gcd(a, b):
+    while b:
+        a, b = b, a % b
+    return a
 
 
 def lcm(a, b):
-    return abs(a * b) // math.gcd(a, b)
+    return a * b // gcd(a, b)
 
 
 def count_non_divisible(n, primes):
-    count = 0
-    k = len(primes)
+    def count_divisible(mask):
+        product = 1
+        for i in range(len(primes)):
+            if mask & (1 << i):
+                product = lcm(product, primes[i])
+        return n // product
 
-    for r in range(1, k + 1):
-        for subset in combinations(primes, r):
-            lcm_value = 1
-            for prime in subset:
-                lcm_value = lcm(lcm_value, prime)
-                if lcm_value > n:
-                    break
-            if lcm_value > n:
-                continue
-            if r % 2 == 1:
-                count += n // lcm_value
-            else:
-                count -= n // lcm_value
+    total = 0
+    for mask in range(1, 1 << len(primes)):
+        if bin(mask).count('1') % 2 == 1:
+            total += count_divisible(mask)
+        else:
+            total -= count_divisible(mask)
 
-    return n - count
+    return n - total
 
 
 def main():

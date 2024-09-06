@@ -6,7 +6,7 @@ def count_ways_to_sum(n):
     MOD = 10 ** 9 + 7
 
     dp = [0] * (2 * n + 1)
-    dp[0] = 1  # Có duy nhất 1 cách để có tổng bằng 0
+    dp[0] = 1
 
     for i in range(1, 2 * n + 1):
         dp[i] = 0

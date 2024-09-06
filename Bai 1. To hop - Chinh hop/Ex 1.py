@@ -12,22 +12,16 @@ def power_mod(a, b, mod):
         b //= 2
     return result
 
-
-def permutation(n, k, mod):
-    return power_mod(n, k, mod)
-
-
 def main():
     MOD = 10 ** 9 + 7
     n = int(input("Nhập n: "))
     k = int(input("Nhập k: "))
 
     if 0 <= k <= n <= 10 ** 9:
-        result = permutation(n, k, MOD)
+        result = power_mod(n, k, MOD)
         print(f"Số cấu hình chỉnh hợp lặp chập {k} của {n} là: {result}")
     else:
         print("Giá trị của n hoặc k không hợp lệ.")
-
 
 if __name__ == "__main__":
     main()
