@@ -10,7 +10,7 @@ def main():
     M = int(input("Nhập M: "))
     N = int(input("Nhập N: "))
 
-    if 1 < M < 10 ** 6 and 1 < N < 10 ** 6:
+    if 0 < M < 10 ** 6 and 0 < N < 10 ** 6:
         result = gcd(M, N)
         print(f"Ước chung lớn nhất của {M} và {N} là: {result}")
     else:
