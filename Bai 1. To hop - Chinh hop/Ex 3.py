@@ -16,7 +16,6 @@ def derangement(n):
 
     for i in range(3, n + 1):
         D[i] = (i - 1) * (D[i - 1] + D[i - 2]) % MOD
-
     return D[n]
 
 

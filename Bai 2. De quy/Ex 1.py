@@ -16,7 +16,7 @@ def fibonacci(k):
 def main():
     n = int(input("Nhập số nguyên dương n chia hết cho 6 (n < 1000): "))
 
-    if n % 6 == 0 and n < 1000:
+    if n % 6 == 0 and 0 < n < 1000:
         fib_1 = fibonacci(1)
         fib_n3 = fibonacci(n // 3)
         fib_n2 = fibonacci(n // 2)

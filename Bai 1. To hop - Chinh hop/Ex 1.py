@@ -25,3 +25,24 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+#Cach_2
+def chinh_hop_lap(n, k):
+    MOD = 10**9 + 7
+    result = 1
+    for i in range(k):
+        result = (result * n) % MOD
+    return result
+
+def main2():
+    n = int(input("Nhập n: "))
+    k = int(input("Nhập k: "))
+
+    if 0 <= k <= n <= 10 ** 9:
+        result = chinh_hop_lap(n, k)
+        print(f"Số cấu hình chỉnh hợp lặp chập {k} của {n} là: {result}")
+    else:
+        print("Giá trị của n hoặc k không hợp lệ.")
+
+if __name__ == "__main2__":
+    main2()
