@@ -14,7 +14,7 @@ def pheptinh(n, k, mod):
         return 1
     tinhtuso = giaithua(n, mod)
     tinhmauso = (giaithua(k, mod) * giaithua(n - k, mod)) % mod
-    return (tinhtuso / tinhmauso) % mod
+    return (tinhtuso // tinhmauso) % mod
 
 
 def main():
