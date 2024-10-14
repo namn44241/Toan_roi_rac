@@ -6,9 +6,7 @@ def hanoi(n, a, b, c):
         print(f"Di chuyển đĩa 1 từ {a} sang {b}")
         return
     hanoi(n - 1, a, c, b)
-    # Di chuyển đĩa lớn nhất từ cột nguồn sang cột đích
     print(f"Di chuyển đĩa {n} từ {a} sang {b}")
-    # Di chuyển n-1 đĩa từ cột phụ sang cột đích
     hanoi(n - 1, c, b, a)
 
 

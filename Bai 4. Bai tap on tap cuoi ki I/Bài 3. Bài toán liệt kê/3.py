@@ -1,17 +1,16 @@
 # Nhập vào 1 số tự nhiên n < 1000. Liệt kê tất cả các tập con của tập {1, 2, ..., n}.
 
-def chuoi(n):
-    def quilui(start, current):
-        result.append(current[:])
-        for i in range(start, n + 1):
-            current.append(i)
-            quilui(i + 1, current)
-            current.pop()
+def tao(n):
+    kq = []
+    def quilui(a, b):
+        kq.append(b[:])
+        for i in range(a, n + 1):
+            b.append(i)
+            quilui(i + 1, b)
+            b.pop()
 
-    result = []
     quilui(1, [])
-    return result
-
+    return kq
 
 def main():
     while True:
@@ -24,7 +23,7 @@ def main():
         except ValueError:
             print("Vui lòng nhập một số nguyên hợp lệ.")
 
-    a = chuoi(n)
+    a = tao(n)
 
     print(f"\nCác tập con của tập {{1, 2, ..., {n}}}:")
     for i in a:

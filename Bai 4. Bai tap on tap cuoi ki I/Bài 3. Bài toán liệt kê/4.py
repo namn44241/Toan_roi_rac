@@ -1,9 +1,10 @@
 # Nhập vào 1 số tự nhiên n < 1000. Liệt kê tất cả các hoán vị của tập {1, 2, ..., n}.
 
 def tao(n):
+    kq = []
     def quilui(m):
         if len(m) == n:
-            result.append(m[:])
+            kq.append(m[:])
             return
 
         for i in range(1, n + 1):
@@ -12,9 +13,8 @@ def tao(n):
                 quilui(m)
                 m.pop()
 
-    result = []
     quilui([])
-    return result
+    return kq
 
 
 def main():

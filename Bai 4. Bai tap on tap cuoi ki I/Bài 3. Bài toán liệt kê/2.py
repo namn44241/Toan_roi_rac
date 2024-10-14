@@ -2,26 +2,26 @@
 # liệt kê tất cả các xâu nhị phân có độ dài n mà có ít nhất hai bít 1 đứng liền nhau.
 
 def tao(n):
-    result = []
-    current = ['0'] * n
+    kq = []
+    ht = ['0'] * n
 
     def quilui(a, b):
         if a == n:
             if b:
-                result.append(''.join(current))
+                kq.append(''.join(ht))
             return
 
         # Thử đặt bit 0
-        current[a] = '0'
+        ht[a] = '0'
         quilui(a + 1, b)
 
         # Thử đặt bit 1
-        current[a] = '1'
-        d = b or (a > 0 and current[a - 1] == '1')
+        ht[a] = '1'
+        d = b or (a > 0 and ht[a - 1] == '1')
         quilui(a + 1, d)
 
     quilui(0, False)
-    return result
+    return kq
 
 
 def main():

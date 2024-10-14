@@ -2,7 +2,7 @@
 # Hãy tính số mất thứ tự D(n),
 # kết quả lấy dư của phép chia cho 10^9+7
 
-def derangement(n):
+def tinh(n):
     MOD = 10 ** 9 + 7
 
     if n == 1:
@@ -23,8 +23,8 @@ def main():
     n = int(input("Nhập n: "))
 
     if 1 <= n <= 10 ** 6:
-        result = derangement(n)
-        print(f"Số mất thứ tự D({n}) là: {result}")
+        a = tinh(n)
+        print(f"Số mất thứ tự D({n}) là: {a}")
     else:
         print("Giá trị của n không hợp lệ.")
 

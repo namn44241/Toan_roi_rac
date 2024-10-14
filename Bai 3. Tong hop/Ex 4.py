@@ -3,10 +3,10 @@
 # kết quả lấy phần dư của phép chia cho 10^9+7
 
 def giaithua(n, mod):
-    result = 1
+    kq = 1
     for i in range(2, n + 1):
-        result = (result * i) % mod
-    return result
+        kq = (kq * i) % mod
+    return kq
 
 
 def pheptinh(n, k, mod):

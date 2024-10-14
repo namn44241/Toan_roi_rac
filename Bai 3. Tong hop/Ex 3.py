@@ -5,10 +5,10 @@
 
 def chinh_hop_lap(n, k):
     MOD = 10**9 + 7
-    result = 1
+    kq = 1
     for i in range(k):
-        result = (result * n) % MOD
-    return result
+        kq = (kq * n) % MOD
+    return kq
 
 def main():
     n = int(input("Nhập n: "))
